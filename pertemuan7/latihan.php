@@ -1,4 +1,23 @@
 <?php
+//variabel scope / lingkup variabel
+//variabel super global
+//variabel global milik php
+//merupakan array associative
+// $x = 10;
+
+// function tampilX()
+// {
+//     global $x;
+//     echo $x;
+// }
+
+// tampilX();
+
+// var_dump($_SERVER);
+// echo "</br>";
+// echo $_SERVER["SERVER_NAME"];
+
+//$_GET
 $mahasiswa = [
     [
         "nama" => "Sultoni Rahman",
@@ -9,7 +28,7 @@ $mahasiswa = [
     ],
     [
         "nama" => "Warno Suparno",
-        "npm" => "123456",
+        "npm" => "789101112",
         "jurusan" => "Kedokteran",
         "email" => "suparnowarno232@gmail.com",
         "gambar" => "2.png"
@@ -31,7 +50,6 @@ $mahasiswa = [
 ];
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,28 +57,21 @@ $mahasiswa = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Mahasiswa</title>
-    <style>
-        .gambar {
-            width: 30px;
-        }
-    </style>
+    <title>Latihan $_GET</title>
 </head>
 
 <body>
-    <h1>Daftar Mahasiswa</h1>
+    <h1>Latihan GET REQUEST</h1>
 
-    <?php foreach ($mahasiswa as $mhs) : ?>
-        <ul>
+
+    <ul>
+        <?php foreach ($mahasiswa as $mhs) : ?>
             <li>
-                <img class="gambar" src="img/<?= $mhs["gambar"]; ?>" alt="">
+                <a href="latihan2.php?nama=<?= $mhs['nama']; ?>&npm=<?= $mhs['npm']; ?>&email=<?= $mhs['email']; ?>&jurusan=<?= $mhs['jurusan']; ?>&gambar=<?= $mhs['gambar']; ?>"><?= $mhs['nama']; ?></a>
             </li>
-            <li>Nama : <?= $mhs["nama"]; ?></li>
-            <li>NPM : <?= $mhs["npm"]; ?></li>
-            <li>Jurusan : <?= $mhs["jurusan"]; ?></li>
-            <li>Email : <?= $mhs["email"]; ?></li>
-        </ul>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    </ul>
+
 
 </body>
 
